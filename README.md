@@ -64,7 +64,7 @@ def load_json(s_d):
 
 
 name_service = ['drive.google.com', 'mail.google.com', 'google.com']
-a_dict = {key: ip_ch(key) for key in name_service}
+a_dict = {key: load_json(key) for key in name_service}
 for c in a_dict.keys():
     print(c, a_dict[c])
 
@@ -78,9 +78,7 @@ while a < 10:
             save_json(d)
             save_yaml(d)
             print('[ERROR] ' + c + ' mismatch: ' + ld + ' ' + d[c])
-    time.sleep(5)
- 
-
+    time.sleep(60)
 ```
 
 ### Вывод скрипта при запуске при тестировании:
